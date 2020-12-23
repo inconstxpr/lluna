@@ -1,0 +1,10 @@
+macro(enable_lluna_modules lluna_project lluna_modules lluna_enabled_modules)
+        foreach(MODULE ${${lluna_enabled_modules}})
+                if(NOT ${MODULE} IN_LIST ${lluna_modules})
+                        message(FATAL_ERROR "Specified ${lluna_project} module ${MODULE} does not exist.")
+                endif(NOT ${MODULE} IN_LIST ${lluna_modules})
+
+                add_subdirectory(${MODULE})
+                set(${lluna_project}_MODULE_${MODULE} ON)
+        endforeach(MODULE ${${lluna_enabled_modules}})
+endmacro(enable_lluna_modules lluna_project lluna_modules lluna_enabled_modules)

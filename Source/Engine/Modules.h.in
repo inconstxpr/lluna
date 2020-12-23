@@ -1,0 +1,3 @@
+#pragma once
+
+#cmakedefine ENGINE_MODULE_Math "Math"

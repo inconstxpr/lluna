@@ -1,0 +1,5 @@
+set(MODEL_VIEWER_LAUNCH_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/Private/ModelViewer.c
+)
+
+target_sources(ModelViewer PRIVATE ${MODEL_VIEWER_LAUNCH_SOURCES})
