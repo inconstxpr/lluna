@@ -1,0 +1,5 @@
+set(ENGINE_CONTAINER_SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/Private/DynamicArray.c
+)
+
+target_sources(lluna PRIVATE ${ENGINE_CONTAINER_SOURCES})

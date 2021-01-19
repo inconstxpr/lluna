@@ -11,10 +11,14 @@ set_property(TARGET lluna PROPERTY C_STANDARD 99)
 include(${CMAKE_SOURCE_DIR}/Build/CMake/llunaModules.cmake)
 
 set(ENGINE_MODULES
+        Container
+        Core
         Math
 )
 
 set(ENGINE_ENABLED_MODULES
+        Container
+        Core
         Math
         CACHE STRING "Enabled engine modules."
 )

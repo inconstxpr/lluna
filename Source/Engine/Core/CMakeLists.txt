@@ -1,0 +1,5 @@
+set(ENGINE_CORE_SOURCES
+
+)
+
+target_sources(lluna PRIVATE ${ENGINE_CORE_SOURCES})

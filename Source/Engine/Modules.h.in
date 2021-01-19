@@ -1,3 +1,5 @@
 #pragma once
 
+#cmakedefine ENGINE_MODULE_Container "Container"
+#cmakedefine ENGINE_MODULE_Core "Core"
 #cmakedefine ENGINE_MODULE_Math "Math"
