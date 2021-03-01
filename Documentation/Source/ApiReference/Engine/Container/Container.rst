@@ -8,3 +8,4 @@ Defines commonly used data structures.
         :maxdepth: 1
 
         DynamicArray
+        RedBlackTree
