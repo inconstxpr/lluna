@@ -362,8 +362,9 @@ static void Clear()
 
 static void ForEach()
 {
-        uint8 Data[] = { 42, 3, 14, 15, 16 };
+        uint32 Data[] = { 42, 3, 14, 15, 16 };
         uint32 ElementSize = sizeof(Data[0]);
+        uint32 ElementCount = sizeof(Data) / ElementSize;
 
         struct lluna_Container_DynamicArray* DynamicArray = lluna_Container_DynamicArray_CreateFromData(Data, sizeof(Data), ElementSize);
 
@@ -375,23 +376,28 @@ static void ForEach()
                 ++Index;
         }
 
+        lluna_TestHelper_CheckEqual(Index, ElementCount, &SessionState, "ForEach did not go through all elements.");
+
         lluna_Container_DynamicArray_Destroy(DynamicArray);
 }
 
 static void ReversedForEach()
 {
-        uint8 Data[] = { 42, 3, 14, 15, 16 };
+        uint32 Data[] = { 42, 3, 14, 15, 16 };
         uint32 ElementSize = sizeof(Data[0]);
+        uint32 ElementCount = sizeof(Data) / ElementSize;
 
         struct lluna_Container_DynamicArray* DynamicArray = lluna_Container_DynamicArray_CreateFromData(Data, sizeof(Data), ElementSize);
 
         uint32* Iterator;
-        uint64 Index = sizeof(Data) / ElementSize - 1;
+        uint64 Index = ElementCount - 1;
         lluna_Container_DynamicArray_ReversedForEach(DynamicArray, Iterator)
         {
                 lluna_TestHelper_CheckEqual(*Iterator, Data[Index], &SessionState, "ReversedForEach did not retrieve the correct pointer.");
                 --Index;
         }
+
+        lluna_TestHelper_CheckEqual(Index, -1, &SessionState, "ReversedForEach did not go through all elements.");
 
         lluna_Container_DynamicArray_Destroy(DynamicArray);
 }

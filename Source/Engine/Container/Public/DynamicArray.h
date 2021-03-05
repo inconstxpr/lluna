@@ -191,7 +191,7 @@ void lluna_Container_DynamicArray_Clear(struct lluna_Container_DynamicArray* Han
  * @param Pointer Iterator variable.
  */
 #define lluna_Container_DynamicArray_ForEach(DynamicArray, Pointer) \
-        for((Pointer) = (DynamicArray)->Data; (Pointer) < (DynamicArray)->Offset; (Pointer) += (DynamicArray)->ElementSize)
+        for((Pointer) = (DynamicArray)->Data; (Pointer) < (DynamicArray)->Data + (DynamicArray)->Offset; (byte*)(Pointer) += (DynamicArray)->ElementSize)
 
  /**
   * @brief Convenience macro for iterating through all elements of the array in reversed order.
@@ -200,4 +200,4 @@ void lluna_Container_DynamicArray_Clear(struct lluna_Container_DynamicArray* Han
   * @param Pointer Iterator variable.
   */
 #define lluna_Container_DynamicArray_ReversedForEach(DynamicArray, Pointer) \
-        for((Pointer) = (DynamicArray)->Offset - (DynamicArray)->ElementSize; (Pointer) >= (DynamicArray)->Data; (Pointer) -= (DynamicArray)->ElementSize)
+        for((Pointer) = (byte*)(DynamicArray)->Data + (DynamicArray)->Offset - (DynamicArray)->ElementSize; (Pointer) >= (DynamicArray)->Data; (byte*)(Pointer) -= (DynamicArray)->ElementSize)
