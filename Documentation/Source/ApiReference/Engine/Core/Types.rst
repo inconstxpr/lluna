@@ -31,3 +31,7 @@ Boolean
 .. doxygentypedef:: boolean
 .. doxygendefine:: true
 .. doxygendefine:: false
+
+Extended types
+--------------
+.. doxygenstruct:: lluna_Core_Types_Text

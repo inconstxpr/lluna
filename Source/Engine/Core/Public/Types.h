@@ -60,3 +60,14 @@ typedef uint8 boolean;
  * @brief Logic false.
  */
 #define false 0
+
+/**
+ * @brief Container for sized text.
+ *
+ * @see lluna_Macros_Text
+ */
+struct lluna_Core_Types_Text
+{
+        const char* Data; /**< Text data. */
+        uint64 Size; /**< Text size. */
+};

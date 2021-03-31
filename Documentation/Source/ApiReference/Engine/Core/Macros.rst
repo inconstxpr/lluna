@@ -12,3 +12,7 @@ Pointer
 -------
 .. doxygendefine:: lluna_Macros_OffsetOf
 .. doxygendefine:: lluna_Macros_ContainerOf
+
+Utility
+-------
+.. doxygenDefine:: lluna_Macros_Text

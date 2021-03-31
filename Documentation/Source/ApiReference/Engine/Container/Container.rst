@@ -9,3 +9,4 @@ Defines commonly used data structures.
 
         DynamicArray
         RedBlackTree
+        String

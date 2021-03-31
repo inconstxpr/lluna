@@ -25,3 +25,10 @@
  * @param Member Name of the member.
  */
 #define lluna_Macros_ContainerOf(Pointer, Type, Member) ((Type*)((byte*)(Pointer) - lluna_Macros_OffsetOf(Type, Member)))
+
+ /**
+ * @brief Creates a sized text container from a string literal.
+ *
+ * @param Text String literal.
+ */
+#define lluna_Macros_Text(Text) ((struct lluna_Core_Types_Text){(Text), (uint64)sizeof(Text)})
