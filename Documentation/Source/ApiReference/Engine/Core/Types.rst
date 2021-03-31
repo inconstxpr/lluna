@@ -35,3 +35,4 @@ Boolean
 Extended types
 --------------
 .. doxygenstruct:: lluna_Core_Types_Text
+        :members:
