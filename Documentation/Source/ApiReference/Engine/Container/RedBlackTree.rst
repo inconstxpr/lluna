@@ -3,7 +3,7 @@ Red Black Tree
 
 **Header:** `RedBlackTree.h`
 
-.. doxyfile:: RedBlackTree.h
+.. doxygenfile:: RedBlackTree.h
         :sections: briefdescription detaileddescription
 
 .. contents:: Overview:
