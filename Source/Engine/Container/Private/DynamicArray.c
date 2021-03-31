@@ -60,6 +60,7 @@ void lluna_Container_DynamicArray_Resize(struct lluna_Container_DynamicArray* Ha
         // TODO This could leak memory. Waiting on validation/custom allocators to fix.
         Handle->Data = realloc(Handle->Data, Size * Handle->ElementSize);
         Handle->AllocatedSize = Size * Handle->ElementSize;
+        Handle->Offset = Handle->Offset > Handle->AllocatedSize ? Handle->AllocatedSize : Handle->Offset;
 }
 
 void lluna_Container_DynamicArray_Shrink(struct lluna_Container_DynamicArray* Handle)
