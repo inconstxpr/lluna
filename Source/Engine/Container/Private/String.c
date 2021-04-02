@@ -1,6 +1,7 @@
 #include <Engine/Container/Public/String.h>
 
 #include <stdarg.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
